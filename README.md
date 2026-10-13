@@ -19,4 +19,4 @@ The complete requested experience remains blocked. No automatic solver, successf
 
 ## Development
 
-Run `node build.cjs` and `node --test tests/verify.test.cjs`. Library code is bundled rather than fetched and evaluated at runtime. Response bodies, cookies, challenge solutions, and credentials are not logged or persisted. Tests use fixtures; no CAPTCHA-solving service is involved.
+Run `node build.cjs` and `node --test tests/*.test.cjs`. Library code is bundled rather than fetched and evaluated at runtime. Response bodies, cookies, challenge solutions, and credentials are not logged or persisted. Tests use fixtures; no CAPTCHA-solving service is involved.
