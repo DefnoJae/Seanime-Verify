@@ -1,6 +1,6 @@
 # Seanime Verify
 
-Version 0.1.2 is a verification-detection library and a Seanime diagnostic plugin. It is **not a working CAPTCHA solver** or playback gateway. No separately running service, browser launch, cookie copying, or user-side dependency installation is included.
+Version 0.1.3 is a verification-detection library and a Seanime diagnostic plugin. It is **not a working CAPTCHA solver** or playback gateway. No separately running service, browser launch, cookie copying, or user-side dependency installation is included.
 
 The optional plugin adds a Seanime Verify sidebar page with an on-demand site-access check. Its result is not an episode-playback test. It cannot automatically authorize MKissa or Anime Nexus. Official site addresses are displayed for human verification; verification in another browser may not authorize Seanime.
 
