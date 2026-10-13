@@ -80,7 +80,7 @@ class SeanimeVerify {
                         const text = response.text();
                         let data; try {data=JSON.parse(text);} catch (_) {}
                         rows[id] = SeanimeVerify.isChallenge(text) || SeanimeVerify.needsVerification(data) ? 'Site verification required' : response.ok ? 'Request succeeded; episode authorization has not been checked' : 'Request failed (HTTP '+response.status+')';
-                    } catch (_) { rows[id]='Request failed; check network or provider availability'; }
+                    } catch (error) { rows[id]=String(error).includes('network access denied') ? 'Plugin permission does not allow this diagnostic request' : 'Request failed; check network or provider availability'; }
                     view.update();
                 }
             } finally {busy=false;view.update();}

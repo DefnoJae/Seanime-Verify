@@ -9,6 +9,9 @@ test('diagnostic button performs bounded checks without launching a browser or c
  assert.equal(urls.length,0);
  assert.match(content(),/webview\.send\('check'/);
  await check();assert.equal(urls.length,2);assert.match(content(),/Site verification required/);assert.doesNotMatch(content(),/disabled/);
+ const allow=JSON.parse(fs.readFileSync(path.join(__dirname,'../Manifest.json'),'utf8')).plugin.permissions.allow.networkAccess.allowedDomains;
+ // Permissions must cover the actual endpoints, including the catalogue's query parameters.
+ assert.deepEqual(urls.map(url=>{const u=new URL(url);return u.origin+u.pathname;}),allow);
  assert.match(content(),/does not solve CAPTCHAs/);
 });
 test('network failures are sanitized and restore button usability',async()=>{
