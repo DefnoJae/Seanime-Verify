@@ -1,4 +1,6 @@
-// Shared provider code, bundled at build time. No remote code execution or service.
+function init() {
+    $ui.register(ctx => {
+        // Shared provider code, bundled at build time. No remote code execution or service.
 class SeanimeVerify {
     static site(id) {
         const sites = {
@@ -62,9 +64,6 @@ class SeanimeVerify {
     }
 }
 
-
-function init() {
-    $ui.register(ctx => {
         const view = ctx.newWebview({slot:'screen',sidebar:{label:'Seanime Verify',icon:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 3 7v6c0 5 9 8 9 8s9-3 9-8V7z"/><path d="m8 12 3 3 5-6"/></svg>'},fullWidth:true,autoHeight:true});
         const rows = {mkissa:'Not checked',nexus:'Not checked'};
         let busy = false;
